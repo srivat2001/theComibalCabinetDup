@@ -4,6 +4,8 @@ import { Breadcomb as ImportedBreadcomb } from "./breadcomb";
 import { Heading as ImportedHeading } from "./heading";
 import { Disclaimer as ImportedDisclaimer } from "./footer";
 import { NoIntenet as ImportedNoIntenet } from "./internetNotFound";
+import ImporttedBanner from "./Banner";
+import ImportedMetaData from "./MetaData";
 
 // Re-export with the original names
 export {
@@ -12,4 +14,6 @@ export {
   ImportedHeading as Heading,
   ImportedDisclaimer as Disclaimer,
   ImportedNoIntenet as NoIntenet,
+  ImporttedBanner as Banner,
+  ImportedMetaData as MetaData,
 };
