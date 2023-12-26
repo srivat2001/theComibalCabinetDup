@@ -1,0 +1,114 @@
+@import "responsive";
+
+.blogs-data {
+  .box {
+    color: $font-color;
+    width: 100%;
+    min-height: 403px;
+    border: 1px solid $border-color;
+    padding: 0px;
+    background: transparent;
+    overflow: hidden;
+    display: block;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+    height: auto;
+    margin: auto;
+    @include respond-to("medium") {
+      display: block;
+      justify-content: center;
+      height: auto;
+      margin: 0px;
+      min-height: auto;
+      margin-bottom: 10px;
+    }
+    @include respond-to("small") {
+      border-radius: 0px;
+    }
+
+    .img-bloginfo-container {
+      display: grid;
+
+      justify-content: center;
+      grid-template-columns: 3fr;
+      height: auto;
+      margin: 0px;
+      margin-bottom: 0px;
+      @include respond-to("blog-item-medium") {
+        grid-template-columns: 3fr 4fr;
+      }
+      @include respond-to("blog-item-small") {
+        grid-template-columns: 3fr;
+      }
+    }
+    @include respond-to("small") {
+      display: block;
+      justify-content: center;
+      height: auto;
+      margin: 0px;
+      margin-bottom: 10px;
+    }
+    .btn-list {
+      margin-left: 15px;
+    }
+    .date {
+      text-align: left;
+      margin-left: 16px;
+      font-weight: 200;
+      font-size: 15px;
+    }
+    .blog_img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .blog_img_cover {
+      position: relative;
+      margin: 0;
+      padding-top: 56.25%;
+    }
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      .title {
+        font-size: 18px;
+        text-align: left;
+        font-weight: 400;
+        padding: 1rem;
+        padding-top: 0px;
+        padding-bottom: 8px;
+        @include respond-to("small") {
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+      .line {
+        border-top: 1px solid $border-color;
+        margin: 1rem;
+
+        margin-top: 6px;
+        margin-bottom: 5px;
+      }
+      .desc {
+        padding: 0px;
+        padding-left: 1rem;
+        margin-top: 9px;
+        margin-bottom: 10px;
+        border: 0px;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: left;
+        line-height: 20px;
+        padding-right: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "responsive";
+.disclaimer {
+  margin-left: 20px;
+  margin-right: 10px;
+  border-top: 1px solid white;
+  background: transparent;
+  margin-top: 91px;
+  line-height: 1.5;
+  background: black;
+  color: white;
+  padding: 1rem;
+  font-weight: 100;
+  font-family: "Kavinlight";
+  @include respond-to("small") {
+    margin: 0;
+  }
+}
+
+.disclaimer p {
+  margin-bottom: 10px;
+}

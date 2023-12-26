@@ -1,0 +1,321 @@
+@import "responsive";
+//@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html {
+  @include respond-to("mobile") {
+    width: fit-content;
+  }
+}
+body {
+  background-color: $body-bg-color;
+  color: $font-color;
+  overflow-x: hidden;
+  position: relative;
+}
+.pagenotfound {
+  border: 1px solid $border-color;
+  padding: 5px 10px;
+  h1 {
+    color: $font-color;
+    margin-left: 20px;
+    @include respond-to("small") {
+      color: $font-color;
+    }
+  }
+}
+.warning-message {
+  text-align: left;
+  margin: auto;
+  background: $bg-color;
+  color: $font-color;
+  padding: 0px 42px 0px 0px;
+
+  @include respond-to("small") {
+    border-radius: 10px;
+  }
+}
+button {
+  background: transparent;
+  border: 1px solid $border-color;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-top: 10px;
+  color: $font-color-light;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: -28px;
+  padding: 6px 19px;
+  border-color: $border-color;
+
+  &:hover {
+    cursor: pointer;
+    background: $bg-color-hover;
+    color: $font-color-hover;
+  }
+}
+@font-face {
+  font-family: "Kavinnormal";
+  src: url("../fonts/Kanit-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Kavinlight";
+  src: url("../fonts/Kanit-Light.ttf") format("truetype");
+}
+.mainloadingScreen {
+  margin-left: 10px;
+}
+.mainloadingScreen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh + 200px);
+  scale: 2;
+  background: $loading-screen-background;
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+@keyframes loading {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.App {
+  font-family: "Kavinlight";
+  position: relative;
+  font-size: 600;
+  margin: 2rem;
+  margin-top: 0px;
+
+  .top-message {
+    width: fit-content;
+    margin: auto;
+    font-size: 20px;
+  }
+
+  @include respond-to("mobile") {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-right: 10px;
+    width: fit-content;
+  }
+  @include respond-to("medium") {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .shared-dom {
+    width: 800px;
+    height: 110px;
+    margin-bottom: 20px;
+  }
+
+  .sub-rect {
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin: 20px 20px 20px 0;
+  }
+  .blog-display-container {
+    background-color: $bg-color;
+    padding-bottom: 10px;
+    min-height: 500px;
+    margin: auto;
+    padding-top: 41px;
+  }
+  .sectioncontainer,
+  .blog-holder-btn-container {
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+    margin: 5rem;
+    margin-top: 0rem;
+    a {
+      text-decoration: none;
+      h2 {
+        margin: 57px 0px 9px 0px;
+        font-size: 19px;
+        color: $font-color-section-name;
+        border-bottom: 3px solid $font-color-section-name-bottom-border;
+        padding-bottom: 5px;
+        width: -moz-fit-content;
+        width: fit-content;
+      }
+    }
+    .blogs-data {
+      background: $bg-color;
+      justify-content: left;
+      padding-top: 5px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 24px;
+      gap: 24px;
+
+      a {
+        text-decoration: none;
+
+        h2 {
+          color: black;
+        }
+      }
+      @include respond-to("small") {
+        grid-template-columns: 1fr;
+        display: grid;
+        grid-row-gap: 10px;
+        padding: 5px 0;
+        height: 100%;
+      }
+    }
+    h2 {
+      margin-bottom: 0px;
+      margin-top: 30px;
+    }
+    @include respond-to("medium") {
+      margin: auto;
+    }
+    @include respond-to("small") {
+      margin: auto;
+    }
+    .banner-container {
+      display: grid;
+      .Banner {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+        border: 1px solid $border-color;
+        background: $bg-color-inverted;
+        color: $font-color-inverted;
+        @include respond-to("medium") {
+          display: block;
+        }
+        @include respond-to("small") {
+          display: block;
+        }
+        .left {
+          grid-column: 1/8;
+          .figure-wrapper {
+            position: relative;
+            margin: 0;
+            padding-top: 56.25%;
+            height: 100%;
+            img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+              width: 100%;
+              object-fit: cover;
+              max-width: 100%;
+            }
+          }
+        }
+        .right {
+          padding: 12px;
+          display: flex;
+          flex-direction: column;
+          background: $bg-color-inverted;
+          color: $font-color-inverted;
+          grid-column: 8/13;
+          a {
+            color: $font-color-inverted;
+            text-decoration: none;
+            .title {
+              font-size: calc(1vw + 19px);
+              line-height: 40px;
+              font-family: "Open Sans", "Lato", sans-serif;
+              @include respond-to("small") {
+                line-height: 35px;
+              }
+              font-weight: 600;
+            }
+          }
+
+          .desc {
+            margin-top: 27px;
+            font-family: "Open Sans", "Lato", sans-serif;
+            border-top: 0px solid rgb(251, 251, 251);
+            padding-top: 9px;
+            font-size: calc(1vw + 1px);
+            line-height: 22px;
+            @include respond-to("medium") {
+              display: block;
+              font-size: calc(1vw + 10px);
+            }
+            @include respond-to("small") {
+              display: block;
+              font-size: calc(1vw + 10px);
+              margin-bottom: 10px;
+            }
+          }
+          .Section {
+            width: fit-content;
+            margin-top: 10px;
+
+            font-size: 15px;
+            margin-top: 13px;
+            padding: 4px 0px;
+          }
+          .timedate {
+            margin-top: auto;
+            @include respond-to("medium") {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .loading {
+    min-height: auto;
+  }
+  .desc {
+    text-align: left;
+    font-size: 19px;
+    font-weight: 200;
+    border-top: 1px solid $border-color;
+    line-height: 26px;
+
+    @include respond-to("small") {
+      margin-top: 10px;
+    }
+  }
+
+  .loadingScreenBar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $loading-screen-background;
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+  .boxloading::after {
+    z-index: 1;
+    height: 400px;
+
+    @include respond-to("small") {
+    }
+  }
+  @keyframes loading {
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  @keyframes gradientloader {
+    0% {
+      background-position: -800px 0;
+    }
+    100% {
+      background-position: 800px 0;
+    }
+  }
+}
