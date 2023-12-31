@@ -131,9 +131,8 @@ export default function Section({
                 <div className="not-found">{actionMessage}</div>
               )}
             </div>
-            {addMore ? (
+            {addMore && alist.length > 0 ? (
               <div>
-                {" "}
                 <button
                   onClick={() => {
                     addmore();
