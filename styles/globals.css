@@ -16,3 +16,8 @@ h5,
 h6 {
   font-family: 'Lato', sans-serif;
 }
+svg:not(:root).svg-inline--fa,
+svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
