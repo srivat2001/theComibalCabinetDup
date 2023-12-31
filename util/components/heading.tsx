@@ -119,12 +119,12 @@ export const Heading = ({ loaded }: { loaded: boolean }) => {
                 <a onClick={signOutbtn}>
                   <button className="upload-btn ">
                     <FontAwesomeIcon icon={faSignOutAlt} />
-                    <span>Sign out</span>
+                    <span className="signout_text">Sign out</span>
                   </button>
                 </a>
                 <Link href="/article/add/new">
                   <button className="upload-btn ">
-                    <FontAwesomeIcon icon={faUpload} />
+                    <FontAwesomeIcon size="xs" icon={faUpload} />
                   </button>
                 </Link>
               </div>
