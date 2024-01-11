@@ -132,9 +132,9 @@ function Main({ isOnline, routerloaded }: MainProps) {
         <MetaData pageTitle={"The Comical Cabinet"} />
         <div className="blog-display-container">
           <div className="blog-holder-btn-container">
-            <ErrorBoundary fallback={<p>Something went wrong</p>}>
+            {/* <ErrorBoundary fallback={<p>Something went wrong</p>}>
               <Banner alist={alist} />
-            </ErrorBoundary>
+            </ErrorBoundary> */}
 
             <h2>Latest Article</h2>
             <div
