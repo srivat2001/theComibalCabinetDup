@@ -18,6 +18,19 @@ interface MainProps {
   isOnline: boolean;
   routerloaded: boolean;
 }
+function sortByDateDescending(arr: Article[]): Article[] {
+  arr.sort((a, b) => {
+    const dateA = new Date(a.date.split("/").reverse().join("-"));
+    const dateB = new Date(b.date.split("/").reverse().join("-"));
+
+    return dateB.getTime() - dateA.getTime();
+  });
+
+  return arr;
+}
+
+// Example usage:
+
 function Main({ isOnline, routerloaded }: MainProps) {
   const [alist, setAlist] = useState<Article[]>([]); //ArticleList
   const [admin, isAdmin] = useState(false); //Yes if admin
@@ -33,7 +46,9 @@ function Main({ isOnline, routerloaded }: MainProps) {
   const addmore = async () => {
     try {
       const val = await get(FirstTime, nextKey, `searchIndex`);
-      let rvarr = val.data!.ArticleList;
+      let responsearr = val.data!.ArticleList;
+      const rvarr = sortByDateDescending(responsearr);
+      console.log(rvarr);
       setNextKey(val.data!.time);
       setFirstTime(false);
       setAlist((alist) => [...alist, ...rvarr]);
@@ -74,6 +89,8 @@ function Main({ isOnline, routerloaded }: MainProps) {
             if (indarticle.status == 404) {
               continue;
             }
+            let responsearr = indarticle.data!.ArticleList;
+            const rvarr = sortByDateDescending(responsearr);
             setBlogsBySection(
               (
                 prevBlogs:
@@ -83,7 +100,7 @@ function Main({ isOnline, routerloaded }: MainProps) {
                   | any
               ) => ({
                 ...prevBlogs,
-                [secitonInd]: indarticle.data?.ArticleList,
+                [secitonInd]: rvarr,
               })
             );
           }
@@ -132,9 +149,9 @@ function Main({ isOnline, routerloaded }: MainProps) {
         <MetaData pageTitle={"The Comical Cabinet"} />
         <div className="blog-display-container">
           <div className="blog-holder-btn-container">
-            {/* <ErrorBoundary fallback={<p>Something went wrong</p>}>
+            <ErrorBoundary fallback={<p>Something went wrong</p>}>
               <Banner alist={alist} />
-            </ErrorBoundary> */}
+            </ErrorBoundary>
 
             <h2>Latest Article</h2>
             <div

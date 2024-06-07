@@ -20,6 +20,7 @@ const updateArticle = async (
       const updates: any = {};
       const user = auth.currentUser;
       const ResponseData = { ...oldDetails };
+
       if (newfile !== undefined) {
         if (newfile) {
           const compressedFile = await compressImage(newfile);
@@ -78,7 +79,7 @@ const updateArticle = async (
           await remove(
             ref(
               db,
-              "searchIndex/" + slugify(oldDetails.title, { lower: false })
+              `searchIndex/${slugify(oldDetails.title, { lower: false })}`
             )
           );
           updates["searchIndex/" + newSlugifiedtitle] = articleMetaData;

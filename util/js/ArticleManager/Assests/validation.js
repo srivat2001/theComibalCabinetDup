@@ -3,6 +3,11 @@ export default function validateInputs(title, para, section) {
   if (title.length < 20 || title.length > 180) {
     validationProblems.push("Title should be between 20 and 180 characters.");
   }
+  if (/[.#$[\]]/.test(title)) {
+    validationProblems.push(
+      "Title contains forbidden characters: '.', '#', '$', '[', or ']'."
+    );
+  }
 
   // if (!/^https?:\/\/.*\.(jpe?g|png)(\?.*)?$/i.test(imglink)) {
   //   validationProblems.push("Image link is not valid.");

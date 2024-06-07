@@ -18,12 +18,22 @@
   .desc {
     margin-bottom: 0px;
   }
-  .editbtn {
-    float: right;
-    @include respond-to("small") {
-      border-radius: 5px;
+  .datetime-editbtn-container {
+    display: flex;
+    a {
+      margin: auto;
+      margin-right: 0;
+      margin-bottom: 0;
+      .editbtn {
+        float: right;
+        margin-bottom: 0px;
+        @include respond-to("small") {
+          border-radius: 5px;
+        }
+      }
     }
   }
+
   .blog_img_cover {
     position: relative;
     min-height: 200px;

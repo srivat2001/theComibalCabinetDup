@@ -139,21 +139,23 @@ function portfolioProject({
                 <div className="articletop">
                   <h1 className="section">{articleData.section}</h1>
                   <div className="heading-main">{articleData.title}</div>
-                  <div className="datetime">
-                    Upload date:{" "}
-                    {timeAndDateConverter(articleData.date, articleData.time)}
+                  <div className="datetime-editbtn-container">
+                    <div className="datetime">
+                      Upload date:{" "}
+                      {timeAndDateConverter(articleData.date, articleData.time)}
+                    </div>
+                    {admin ? (
+                      <Link
+                        href={
+                          "/article/edit/" +
+                          slugify(articleData.title, { lower: false }) +
+                          "?type=edit"
+                        }
+                      >
+                        <button className="editbtn">Edit</button>
+                      </Link>
+                    ) : null}
                   </div>
-                  {admin ? (
-                    <Link
-                      href={
-                        "/article/edit/" +
-                        slugify(articleData.title, { lower: false }) +
-                        "?type=edit"
-                      }
-                    >
-                      <button className="editbtn">Edit</button>
-                    </Link>
-                  ) : null}
                 </div>
 
                 <div className="blog_img_cover loadingScreenBar">
@@ -189,7 +191,7 @@ function portfolioProject({
                     <FontAwesomeIcon icon={faCopy} size="2x" />
                   </a>
                 </div>
-                <h1 className="authorname">By {articleData.displayName}</h1>
+                <h1 className="authorname">By Staff</h1>
                 <div className="article-para">
                   {articleData.desc
                     .replace(/\\n/g, "")

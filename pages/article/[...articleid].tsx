@@ -286,7 +286,6 @@ function PublishArticle({
                             oldDetails &&
                             oldDetails.hasOwnProperty("blogid")
                           ) {
-                            console.log(oldDetails);
                             const result = await update(
                               oldDetails,
                               Inputdetails,

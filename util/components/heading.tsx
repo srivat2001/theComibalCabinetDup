@@ -174,7 +174,7 @@ export const Heading = ({ loaded }: { loaded: boolean }) => {
                   </button>
                   {/* <Link to="/article/add-article"></Link> */}
 
-                  <Link href="/article/add-article">
+                  <Link href="/article/add/new">
                     <button className="upload-btn ">
                       <FontAwesomeIcon icon={faUpload} />
                     </button>
