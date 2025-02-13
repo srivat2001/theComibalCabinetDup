@@ -53,7 +53,7 @@ export const Heading = ({ loaded }: { loaded: boolean }) => {
   function signin() {
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
-    if (1) {
+    if (0) {
       signInWithRedirect(auth, provider);
     } else {
       signInWithPopup(auth, provider)
@@ -80,6 +80,7 @@ export const Heading = ({ loaded }: { loaded: boolean }) => {
   useEffect(() => {
     fetchSection();
     const auth = getAuth(app);
+    console.log(localStorage.getItem("_loggeddata"));
     getRedirectResult(auth)
       .then((result) => {
         if (result) {
